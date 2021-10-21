@@ -45,6 +45,6 @@ notes.delete('/:id', (req,res) => {
     const filtered = db.filter(note => note.id !== id);
     writeToFile('./db/db.json',filtered);
     readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
-})
+});
 
 module.exports = notes;
